@@ -7,18 +7,18 @@ import com.example.daggerexampleapp.core.common.ImageLoader
 import com.example.daggerexampleapp.core.common.ImageLoaderImpl
 import com.example.daggerexampleapp.core.di.components.DaggerAppComponent
 import com.example.daggerexampleapp.core.models.Photo
-import com.example.daggerexampleapp.core.network.PixelsApi
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainScreenView {
 
-    private val imageLoader: ImageLoader = ImageLoaderImpl()
     private val imageAdapter by lazy { ImageAdapter(imageLoader) }
-    private val presenter by lazy { MainScreenPresenter(pixelsApi) }
 
     @Inject
-    lateinit var pixelsApi: PixelsApi
+    lateinit var presenter: MainScreenPresenter
+
+    @Inject
+    lateinit var imageLoader: ImageLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

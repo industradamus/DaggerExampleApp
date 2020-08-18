@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daggerexampleapp.R
 import com.example.daggerexampleapp.core.common.ImageLoader
+import com.example.daggerexampleapp.core.di.components.DaggerAppComponent
 import com.example.daggerexampleapp.core.models.Photo
 import kotlinx.android.synthetic.main.list_item_image.view.*
+import javax.inject.Inject
 
 /**
  * @author s.buvaka
